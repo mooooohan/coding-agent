@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>arXiv Computer Science Daily</h1>
+    <p class="lead">Latest papers from arXiv Computer Science categories</p>
+
+    <!-- Category filter info -->
+    {% if selected_category %}
+        <div class="alert alert-info" role="alert">
+            Showing papers in category: <strong>{{ selected_category }}</strong>
+            <a href="{{ url_for('index') }}" class="ms-2 btn btn-sm btn-outline-secondary">Show all</a>
+        </div>
+    {% else %}
+        <div class="alert alert-primary" role="alert">
+            Showing all papers from categories: <strong>cs.AI, cs.CV, cs.SE</strong>
+        </div>
+    {% endif %}
+
+    <!-- Papers list -->
+    {% if papers|length > 0 %}
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for paper in papers %}
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ paper['title'][:100] }}{% if paper['title']|length > 100 %}...{% endif %}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                {{ paper['authors'][:3]|join(', ') }}{% if paper['authors']|length > 3 %}, et al.{% endif %}
+                            </h6>
+                            <p class="card-text">{{ paper['summary'][:200] }}{% if paper['summary']|length > 200 %}...{% endif %}</p>
+                            <a href="{{ url_for('paper_detail', paper_index=loop.index0) }}" class="btn btn-primary">Read More</a>
+                            <a href="{{ paper['link'] }}" target="_blank" class="btn btn-outline-secondary ms-2">arXiv Link</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Published: {{ paper['published'][:10] }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            No papers found in this category.
+        </div>
+    {% endif %}
+{% endblock %}
