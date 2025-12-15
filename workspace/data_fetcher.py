@@ -1,6 +1,7 @@
 import urllib.request
 import xml.etree.ElementTree as ET
 import json
+import os
 
 # arXiv API configuration
 BASE_URL = "http://export.arxiv.org/api/query?"
@@ -21,14 +22,41 @@ def fetch_arxiv_papers(category, max_results):
         papers = []
         
         for entry in root.findall('atom:entry', namespace):
+            # Extract basic metadata
+            entry_id = entry.find('atom:id', namespace).text
+            title = entry.find('atom:title', namespace).text.replace('\n', ' ').strip()
+            published = entry.find('atom:published', namespace).text
+            authors = [author.find('atom:name', namespace).text for author in entry.findall('atom:author', namespace)]
+            
+            # New Feature: PDF Link
+            pdf_link = entry_id.replace("/abs/", "/pdf/")
+            
+            # New Feature: BibTeX Generation
+            year = published[:4]
+            first_author_lastname = authors[0].split()[-1] if authors else "Unknown"
+            title_first_word = ''.join(filter(str.isalpha, title.split()[0])) if title else "Paper"
+            citation_key = f"{first_author_lastname}{year}{title_first_word}"
+            
+            bibtex = (
+                f"@article{{{citation_key},\n" 
+                f"  title={{{title}}},\n" 
+                f"  author={{{' and '.join(authors)}}},\n" 
+                f"  journal={{arXiv preprint arXiv:{entry_id.split('/')[-1]}}},\n" 
+                f"  year={{{year}}},\n" 
+                f"  url={{{entry_id}}}\n" 
+                f"}}" 
+            )
+
             paper = {
-                'title': entry.find('atom:title', namespace).text.replace('\n', ' ').strip(),
-                'published': entry.find('atom:published', namespace).text,
+                'title': title,
+                'published': published,
                 'updated': entry.find('atom:updated', namespace).text,
                 'summary': entry.find('atom:summary', namespace).text.replace('\n', ' ').strip(),
-                'link': entry.find('atom:id', namespace).text,
-                'authors': [author.find('atom:name', namespace).text for author in entry.findall('atom:author', namespace)],
-                'categories': [category.get('term') for category in entry.findall('atom:category', namespace)]
+                'link': entry_id,       # Original Abstract Page Link
+                'pdf_link': pdf_link,   # Direct PDF Link
+                'bibtex': bibtex,       # Citation String
+                'authors': authors,
+                'categories': [cat.get('term') for cat in entry.findall('atom:category', namespace)]
             }
             papers.append(paper)
         
@@ -47,12 +75,18 @@ def main():
         all_papers.extend(papers)
         print(f"Fetched {len(papers)} papers for category: {category}")
     
-    # Save to papers.json
-    with open('papers.json', 'w', encoding='utf-8') as f:
-        json.dump(all_papers, f, indent=2, ensure_ascii=False)
+    # Locate directory relative to this script to ensure proper path handling
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(script_dir, 'papers.json')
     
-    print(f"\nTotal papers fetched: {len(all_papers)}")
-    print(f"Papers saved to: papers.json")
+    try:
+        with open(file_path, 'w', encoding='utf-8') as f:
+            json.dump(all_papers, f, indent=2, ensure_ascii=False)
+        
+        print(f"\nTotal papers fetched: {len(all_papers)}")
+        print(f"Papers successfully saved to: {file_path}")
+    except Exception as e:
+        print(f"Error saving to JSON: {str(e)}")
 
 if __name__ == "__main__":
     main()

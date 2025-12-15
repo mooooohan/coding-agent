@@ -8,7 +8,7 @@ from openai import OpenAI
 # 1. 配置区域 (Configuration)
 # ==========================================
 
-API_KEY = "" 
+API_KEY = "sk-55b426b1961a4de9a639eb7dd8567a65" 
 
 BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 MODEL_NAME = "qwen-flash"

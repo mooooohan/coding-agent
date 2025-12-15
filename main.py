@@ -55,9 +55,11 @@ def main():
         while retry_count < max_retries and not task_passed:
             # Context Management: 每次任务开始前，注入当前文件状态
             # 这能防止 Agent 在长任务中“迷失”
+            import os
+            from config import WORK_DIR
             existing_files = []
-            if os.path.exists("workspace"):
-                existing_files = os.listdir("workspace")
+            if os.path.exists(WORK_DIR):
+                existing_files = os.listdir(WORK_DIR)
                 
             # 重置 Coder 记忆，只保留 System Prompt 和 Context
             coder.messages = [
@@ -74,10 +76,17 @@ def main():
             
             # 自动读取关键代码内容供 Reviewer 检查 (RAG-lite)
             code_context = ""
+            from config import WORK_DIR
             for f in existing_files:
                 if f.endswith('.py') or f.endswith('.html') or f.endswith('.json'):
-                    content = read_file(f)
-                    code_context += f"\nFile: {f}\nContent:\n{content[:1000]}...\n" # 截断以节省 token
+                    # 使用正确的路径读取文件
+                    try:
+                        import os
+                        with open(os.path.join(WORK_DIR, f), 'r', encoding='utf-8') as file:
+                            content = file.read()
+                        code_context += f"\nFile: {f}\nContent:\n{content[:1000]}...\n" # 截断以节省 token
+                    except Exception as e:
+                        code_context += f"\nFile: {f}\nError: {str(e)}\n"
             
             review_msg = f"Task was: {task_desc}. Check the file contents below. Does it look correct and use REAL data logic? Output PASS or FAIL.\n{code_context}"
             review_response = reviewer.chat(review_msg)

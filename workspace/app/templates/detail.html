@@ -29,8 +29,7 @@
                     </div>
                     <div class="mt-3">
                         <a href="{{ paper['link'] }}" target="_blank" class="btn btn-primary">Open on arXiv</a>
-                        {% set pdf_link = paper['link'].replace('abs', 'pdf') + '.pdf' %}
-                        <a href="{{ pdf_link }}" target="_blank" class="btn btn-outline-primary ms-2">Download PDF</a>
+                        <a href="{{ paper['pdf_link'] }}" target="_blank" class="btn btn-outline-primary ms-2">Download PDF</a>
                         <a href="{{ url_for('index') }}" class="btn btn-outline-secondary ms-2">Back to Home</a>
                     </div>
                 </div>
@@ -57,14 +56,7 @@
                         <h5 class="mb-2">BibTeX</h5>
                         <div class="bg-light p-3 rounded border">
                             <pre id="bibtex-citation" style="white-space: pre-wrap; word-wrap: break-word; margin: 0;">
-@misc{ {{ paper['link'].split('/')[-1].replace('.', '') }},
-      title={ {{ paper['title'] }} },
-      author={ {{ paper['authors']|join(' and ') }} },
-      year={ {{ paper['published'][:4] }} },
-      eprint={ {{ paper['link'].split('/')[-1] }} },
-      archivePrefix={arXiv},
-      primaryClass={ {{ paper['categories'][0] if paper['categories'] else 'cs.AI' }} }
-}
+{{ paper['bibtex'] }}
                             </pre>
                         </div>
                         <button onclick="copyText('bibtex-citation', 'BibTeX citation copied!')" class="btn btn-outline-primary mt-2">Copy BibTeX</button>
