@@ -10,7 +10,6 @@ API_KEY = "sk-55b426b1961a4de9a639eb7dd8567a65"
 # 阿里云兼容 OpenAI 的 Base URL
 BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 
-# 推荐使用 qwen-plus 或 qwen-max 以获得最佳逻辑能力
 MODEL_NAME = "qwen3-coder-plus" 
 
 # 工作目录：Agent 生成的代码将放在这里
