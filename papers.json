@@ -1,0 +1,92 @@
+[
+  {
+    "title": "SceneMaker: Open-set 3D Scene Generation with Decoupled De-occlusion and Pose Estimation Model",
+    "link": "http://arxiv.org/abs/2512.10957v1",
+    "pdf_link": "http://arxiv.org/pdf/2512.10957v1",
+    "bibtex": "@article{Shi2025SceneMaker, title={SceneMaker: Open-set 3D Scene Generation with Decoupled De-occlusion and Pose Estimation Model}, author={Yukai Shi and Weiyu Li and Zihao Wang and Hongyang Li and Xingyu Chen and Ping Tan and Lei Zhang}, year={2025}, url={http://arxiv.org/abs/2512.10957v1}}",
+    "categories": [
+      "cs.AI"
+    ]
+  },
+  {
+    "title": "Hierarchical Dataset Selection for High-Quality Data Sharing",
+    "link": "http://arxiv.org/abs/2512.10952v1",
+    "pdf_link": "http://arxiv.org/pdf/2512.10952v1",
+    "bibtex": "@article{Zhou2025Hierarchical, title={Hierarchical Dataset Selection for High-Quality Data Sharing}, author={Xiaona Zhou and Yingyan Zeng and Ran Jin and Ismini Lourentzou}, year={2025}, url={http://arxiv.org/abs/2512.10952v1}}",
+    "categories": [
+      "cs.AI"
+    ]
+  },
+  {
+    "title": "Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation",
+    "link": "http://arxiv.org/abs/2512.10949v1",
+    "pdf_link": "http://arxiv.org/pdf/2512.10949v1",
+    "bibtex": "@article{Tang2025Are, title={Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation}, author={Yiwen Tang and Zoey Guo and Kaixin Zhu and Ray Zhang and Qizhi Chen and Dongzhi Jiang and Junli Liu and Bohan Zeng and Haoming Song and Delin Qu and Tianyi Bai and Dan Xu and Wentao Zhang and Bin Zhao}, year={2025}, url={http://arxiv.org/abs/2512.10949v1}}",
+    "categories": [
+      "cs.AI"
+    ]
+  },
+  {
+    "title": "ImplicitRDP: An End-to-End Visual-Force Diffusion Policy with Structural Slow-Fast Learning",
+    "link": "http://arxiv.org/abs/2512.10946v1",
+    "pdf_link": "http://arxiv.org/pdf/2512.10946v1",
+    "bibtex": "@article{Chen2025ImplicitRDP, title={ImplicitRDP: An End-to-End Visual-Force Diffusion Policy with Structural Slow-Fast Learning}, author={Wendi Chen and Han Xue and Yi Wang and Fangyuan Zhou and Jun Lv and Yang Jin and Shirun Tang and Chuan Wen and Cewu Lu}, year={2025}, url={http://arxiv.org/abs/2512.10946v1}}",
+    "categories": [
+      "cs.AI"
+    ]
+  },
+  {
+    "title": "AlcheMinT: Fine-grained Temporal Control for Multi-Reference Consistent Video Generation",
+    "link": "http://arxiv.org/abs/2512.10943v1",
+    "pdf_link": "http://arxiv.org/pdf/2512.10943v1",
+    "bibtex": "@article{Girish2025AlcheMinT, title={AlcheMinT: Fine-grained Temporal Control for Multi-Reference Consistent Video Generation}, author={Sharath Girish and Viacheslav Ivanov and Tsai-Shien Chen and Hao Chen and Aliaksandr Siarohin and Sergey Tulyakov}, year={2025}, url={http://arxiv.org/abs/2512.10943v1}}",
+    "categories": [
+      "cs.AI"
+    ]
+  },
+  {
+    "title": "StereoSpace: Depth-Free Synthesis of Stereo Geometry via End-to-End Diffusion in a Canonical Space",
+    "link": "http://arxiv.org/abs/2512.10959v1",
+    "pdf_link": "http://arxiv.org/pdf/2512.10959v1",
+    "bibtex": "@article{Behrens2025StereoSpace, title={StereoSpace: Depth-Free Synthesis of Stereo Geometry via End-to-End Diffusion in a Canonical Space}, author={Tjark Behrens and Anton Obukhov and Bingxin Ke and Fabio Tosi and Matteo Poggi and Konrad Schindler}, year={2025}, url={http://arxiv.org/abs/2512.10959v1}}",
+    "categories": [
+      "cs.CV"
+    ]
+  },
+  {
+    "title": "WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World",
+    "link": "http://arxiv.org/abs/2512.10958v1",
+    "pdf_link": "http://arxiv.org/pdf/2512.10958v1",
+    "bibtex": "@article{Liang2025WorldLens, title={WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World}, author={Ao Liang and Lingdong Kong and Tianyi Yan and Hongsi Liu and Wesley Yang and Ziqi Huang and Wei Yin and Jialong Zuo and Yixuan Hu and Dekai Zhu and Dongyue Lu and Youquan Liu and Guangfeng Jiang and Linfeng Li and Xiangtai Li and Long Zhuo and Lai Xing Ng and Benoit R. Cottereau and Changxin Gao and Liang Pan and Wei Tsang Ooi and Ziwei Liu}, year={2025}, url={http://arxiv.org/abs/2512.10958v1}}",
+    "categories": [
+      "cs.CV"
+    ]
+  },
+  {
+    "title": "SceneMaker: Open-set 3D Scene Generation with Decoupled De-occlusion and Pose Estimation Model",
+    "link": "http://arxiv.org/abs/2512.10957v1",
+    "pdf_link": "http://arxiv.org/pdf/2512.10957v1",
+    "bibtex": "@article{Shi2025SceneMaker, title={SceneMaker: Open-set 3D Scene Generation with Decoupled De-occlusion and Pose Estimation Model}, author={Yukai Shi and Weiyu Li and Zihao Wang and Hongyang Li and Xingyu Chen and Ping Tan and Lei Zhang}, year={2025}, url={http://arxiv.org/abs/2512.10957v1}}",
+    "categories": [
+      "cs.CV"
+    ]
+  },
+  {
+    "title": "Empowering Dynamic Urban Navigation with Stereo and Mid-Level Vision",
+    "link": "http://arxiv.org/abs/2512.10956v1",
+    "pdf_link": "http://arxiv.org/pdf/2512.10956v1",
+    "bibtex": "@article{Zhou2025Empowering, title={Empowering Dynamic Urban Navigation with Stereo and Mid-Level Vision}, author={Wentao Zhou and Xuweiyi Chen and Vignesh Rajagopal and Jeffrey Chen and Rohan Chandra and Zezhou Cheng}, year={2025}, url={http://arxiv.org/abs/2512.10956v1}}",
+    "categories": [
+      "cs.CV"
+    ]
+  },
+  {
+    "title": "Omni-Attribute: Open-vocabulary Attribute Encoder for Visual Concept Personalization",
+    "link": "http://arxiv.org/abs/2512.10955v1",
+    "pdf_link": "http://arxiv.org/pdf/2512.10955v1",
+    "bibtex": "@article{Chen2025OmniAttribute, title={Omni-Attribute: Open-vocabulary Attribute Encoder for Visual Concept Personalization}, author={Tsai-Shien Chen and Aliaksandr Siarohin and Guocheng Gordon Qian and Kuan-Chieh Jackson Wang and Egor Nemchinov and Moayed Haji-Ali and Riza Alp Guler and Willi Menapace and Ivan Skorokhodov and Anil Kag and Jun-Yan Zhu and Sergey Tulyakov}, year={2025}, url={http://arxiv.org/abs/2512.10955v1}}",
+    "categories": [
+      "cs.CV"
+    ]
+  }
+]
